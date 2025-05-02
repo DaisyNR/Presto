@@ -6,7 +6,7 @@
 }
 
 
-h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom{
+h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link{
     font-family: "Amarante", serif;
     font-weight: 400;
     font-style: normal;
@@ -93,8 +93,30 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom{
     transition: 0.5s;
 }
 
+.nav-link-custom{
+    letter-spacing: 4px;
+}
+
+.icon{
+    transition: 0.5s;
+}
+
+.icon-custom{
+    rotate: 180deg;
+}
+
+/* .nav-link-custom:hover{
+    text-shadow: 2px 2px 5px var(--red), -2px -2px 5px var(--red);
+    color: var(--beige);
+} */
+
 .nav-link:hover{
     color: var(--red);
     text-shadow: 2px 2px 5px var(--white), -2px -2px 5px var(--white);
     font-weight: bolder;
+}
+
+.navCustom{
+    background: linear-gradient(var(--black), var(--burgundy));
+    transition: 0.5s;
 }

@@ -6,7 +6,7 @@
 }
 
 
-h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link{
+h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link, .number{
     font-family: "Amarante", serif;
     font-weight: 400;
     font-style: normal;
@@ -15,16 +15,19 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link{
 :root{
     --red: rgb(214, 0, 25);
     --red2: rgb(159, 0, 28);
-    --black: rgb(10, 0, 0);
+    --c-black: rgb(10, 0, 0);
     --burgundy: rgb(70, 1, 4);
     --dark-burgundy: rgb(39, 0, 1);
     --green: rgb(93, 96, 65);
     --beige: rgb(123, 99, 71);
     --pink-gray: rgb(135, 107, 104);
-    --pink: rgb(110, 54, 65);
     --white: rgb(242, 244, 247);
     --offwhite: rgb(172, 173, 178);
     --darkgreen: #1f201a;
+}
+
+body{
+    background-color: var(--darkgreen);
 }
 
 .bg-red{
@@ -32,15 +35,15 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link{
 }
 
 .bg-black{
-    background-color: var(--black);
+    background-color: var(--c-black);
 }
 
 .bg-red2{
     background-color: var(--red2);
 }
 
-.bg-beige{
-    background-color: var(--beige);
+.bg-d-burgundy{
+    background-color: var(--dark-burgundy);
 }
 
 .bg-green{
@@ -68,7 +71,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link{
 }
 
 .text-black{
-    color: var(--black);
+    color: var(--c-black);
 }
 
 .header{
@@ -111,7 +114,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link{
 /* Navbar */
 
 nav{
-    height: 60px;
+    height: 55px;
 }
 
 .nav-link{
@@ -121,7 +124,7 @@ nav{
 
 .nav-linkCustom{
     letter-spacing: 4px;
-    text-shadow:2px 2px 5px var(--black), -2px -2px 5px var(--black) ;
+    text-shadow:2px 2px 5px var(--c-black), -2px -2px 5px var(--c-black) ;
 }
 
 .nav-linkCustom:hover{
@@ -133,8 +136,6 @@ nav{
     transition: 0.5s;
 }
 
-
-
 .nav-link:hover{
     color: var(--red);
     text-shadow: 2px 2px 5px var(--white), -2px -2px 5px var(--white);
@@ -142,7 +143,7 @@ nav{
 }
 
 .navCustom{
-    background: linear-gradient(90deg, var(--black), var(--darkgreen), var(--black));
+    background: linear-gradient(90deg, var(--c-black), var(--darkgreen), var(--c-black));
     transition: 0.5s;
 }
 
@@ -150,15 +151,11 @@ nav{
     rotate: -180deg;
 }
 
-
 /* Positioned */
 .icon{
-    height: 50px;
-    width: 50px;
-    margin-top: 5px;
+    margin-top: 15px;
     transition: 0.5s;
 }
-
 
 .positioned{
     position: relative;
@@ -167,6 +164,7 @@ nav{
 
 .col-custom{
     background: linear-gradient(var(--green),transparent);
+    padding-bottom: 20px;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.5s;
@@ -174,16 +172,74 @@ nav{
 }
 
 .col-custom:hover{
-    background: linear-gradient(var(--darkgreen),var(--black));
+    background: linear-gradient(var(--green),var(--dark-burgundy),var(--c-black));
     color: var(--red);
 }
 
 
+/* Numeri incrementali */
+.number{
+    font-size: 50px;
+    font-weight: 900px;
+    color: var(--red);
+}
+
+.img-custom{
+    border-radius: 50%;
+    height: 80%;
+}
+
+/* Swiper */
+.swiper{
+    height: 400px;
+    width: 600px;
+}
+.card-review{
+    height: 250px;
+    width: 500px;
+    border: 2px solid var(--c-black);
+    border-radius: 20px;
+    background-color: var(--green);
+    color: var(--c-black);
+}
+
+.swiper-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer */
+.footer{
+    height: 30px;
+    background-color: var(--green);
+    color: var(--darkgreen);
+    margin-bottom: 0px;
+}
+
+/* PAGINA ANNUNCI */
+
+.accordion-item{
+    background-color: var(--pink-gray);
+    color: var(--c-black);
+}
+
+.accordion-button{
+    background-color: var(--c-black);
+    color: var(--white);
+}
+
+.accordion-button:not(.collapsed){
+    color: var(--white);
+    background-color: var(--c-black);
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
 
 
-
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
     .positioned{
         position: fixed;
         top: -900px;
@@ -197,13 +253,13 @@ nav{
     }
 
     .nav-link{
-        background-color: var(--green);
         margin-left: auto;
         margin-right: auto;
     }
 
-    body{
-        background-color: #1f201a;
+    .moon{
+        display: none;
     }
+
 
 }

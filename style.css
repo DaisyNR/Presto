@@ -14,12 +14,10 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-custom, .nav-link, .number{
 
 :root{
     --red: rgb(214, 0, 25);
-    --red2: rgb(159, 0, 28);
     --c-black: rgb(10, 0, 0);
     --burgundy: rgb(70, 1, 4);
     --dark-burgundy: rgb(39, 0, 1);
     --green: rgb(93, 96, 65);
-    --beige: rgb(123, 99, 71);
     --pink-gray: rgb(135, 107, 104);
     --white: rgb(242, 244, 247);
     --offwhite: rgb(172, 173, 178);
@@ -30,6 +28,10 @@ body{
     background-color: var(--darkgreen);
 }
 
+.bg-burgundy{
+    background-color: var(--burgundy);
+}
+
 .bg-red{
     background-color: var(--red);
 }
@@ -38,9 +40,6 @@ body{
     background-color: var(--c-black);
 }
 
-.bg-red2{
-    background-color: var(--red2);
-}
 
 .bg-d-burgundy{
     background-color: var(--dark-burgundy);
@@ -58,9 +57,6 @@ body{
     color: var(--red);
 }
 
-.text-red2{
-    color: var(--red2);
-}
 
 .text-white{
     color: var(--white);
@@ -236,6 +232,24 @@ nav{
 
 .accordion-button:focus{
     box-shadow: none;
+}
+
+.card-custom{
+    height: 450px;
+    width: 30%;
+    border: 2px solid var(--pink-gray);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.img-card{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 

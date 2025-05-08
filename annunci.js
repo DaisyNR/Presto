@@ -53,24 +53,27 @@ fetch('./annunci.json').then((response)=>response.json()).then((data)=>{
     showCards(data);
 
 
-    function filterByCategory(categoria) {
+    // Categoria
 
+    let radioButtons = document.querySelectorAll('.form-check-input');
+
+    function filterByCategory(array) {
+
+        let categoria = Array.from(radioButtons).find((button)=>button.checked).id;
+        
         if(categoria != 'All'){
-            let filtered = data.filter((annuncio)=>annuncio.category == categoria);
-            showCards(filtered);
+            let filtered = array.filter((annuncio)=>annuncio.category == categoria);
+            return filtered;
         }else{
-            showCards(data);
+            return array
         }
 
     }
 
-   
-
-    let radioButtons = document.querySelectorAll('.form-check-input');
-
     radioButtons.forEach((button)=>{
         button.addEventListener('click', ()=>{
-            filterByCategory(button.id);
+            setPriceInput(filterByCategory(data));
+            globalFilter();
         });
     });
 
@@ -80,8 +83,8 @@ fetch('./annunci.json').then((response)=>response.json()).then((data)=>{
     let priceInput = document.querySelector('#priceInput');
     let priceValue = document.querySelector('#PriceValue');
 
-    function setPriceInput(){
-        let prices = data.map((annuncio)=> +annuncio.price);
+    function setPriceInput(array){
+        let prices = array.map((annuncio)=> +annuncio.price);
         prices.sort((a,b)=>a-b);
 
         let maxPrice = Math.ceil(prices.pop());
@@ -90,19 +93,47 @@ fetch('./annunci.json').then((response)=>response.json()).then((data)=>{
         priceValue.innerHTML = maxPrice;
     }
 
-    setPriceInput();
+    setPriceInput(filterByCategory(data));
 
 
-    function filterByPrice() {
-        let filtered = data.filter((annuncio)=> +annuncio.price <= priceInput.value);
-        showCards(filtered);
+    function filterByPrice(array) {
+        let filtered = array.filter((annuncio)=> +annuncio.price <= priceInput.value);
+        return filtered
         
     };
 
     priceInput.addEventListener('input',()=>{
         priceValue.innerHTML = priceInput.value;
-        filterByPrice()
+        globalFilter();
     })
+
+
+    // Parola
+
+    let wordInput = document.querySelector('#wordInput');
+
+    function filterByWord(array) {
+        let filtered = array.filter((annuncio)=>annuncio.name.toLowerCase().includes(wordInput.value.toLowerCase()));
+        return filtered
+        
+    }
+
+    wordInput.addEventListener('input',()=>{
+        globalFilter();
+    });
+
+
+
+    // Globale
+
+    function globalFilter() {
+        let filteredByCategory = filterByCategory(data);
+        let filteredByPrice = filterByPrice(filteredByCategory);
+        let filteredByWord = filterByWord(filteredByPrice);
+
+        showCards(filteredByWord);
+    };
+
 
 
 });

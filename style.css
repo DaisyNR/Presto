@@ -356,10 +356,19 @@ nav{
     .nav-link{
         margin-left: auto;
         margin-right: auto;
+        background-color: var(--green);
     }
 
     .moon{
         display: none;
+    }
+
+    .flipCard, .circle{
+        margin-top: 100px;
+    }
+
+    .card-custom{
+        width: 100%;
     }
 
 

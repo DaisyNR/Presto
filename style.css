@@ -296,9 +296,47 @@ nav{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
+.flipCard{
+    height: 400px;
+    width: 300px;
+}
 
+.flipCard:hover > .inner{
+    transform: rotateY(180deg);
+}
+
+.inner{
+    height: 100%;
+    width: 100%;
+    border: 2px dotted var(--red);
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.innerFace{
+    height: 400px;
+    width: 300px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.innerBack{
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 15px;
+}
 
 
 

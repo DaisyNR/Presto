@@ -270,8 +270,8 @@ nav{
 }
 
 .opener{
-    height: 75px;
-    width: 75px;
+    height: 85px;
+    width: 85px;
     border-radius: 50%;
     border: 2px solid var(--red);
     display: flex;
@@ -285,8 +285,8 @@ nav{
 }
 
 .moved{
-    height: 75px;
-    width: 75px;
+    height: 85px;
+    width: 85px;
     border-radius: 50%;
     border: 2px solid var(--red);
     background-color: var(--dark-burgundy);

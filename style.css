@@ -1,8 +1,7 @@
 *{
     font-family: "Genos", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
+    
 }
 
 
@@ -49,10 +48,6 @@ body{
     background-color: var(--green);
 }
 
-.text-dburgundy{
-    color: var(--dark-burgundy)
-}
-
 .text-red{
     color: var(--red);
 }
@@ -72,10 +67,10 @@ body{
 
 .header{
     background-image: linear-gradient(transparent,rgba(31, 32, 26,0.5)), url(./media/foresta.jpeg);
-    /* background-image: url(./media/foresta.jpeg); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 
 .btn-custom{
@@ -341,22 +336,40 @@ nav{
 
 
 @media screen and (max-width: 700px){
+   
+    .header{
+        margin-bottom: 100px;
+    }
+
     .positioned{
         position: fixed;
-        top: -900px;
+        margin-top: -40vh;
+        margin-bottom: 100vh;
     }
+
     .col-custom{
         background-color: var(--green);
     }
+
     .bg-riflesso{
         margin: 0px;
         padding: 0px;
+        height: 200vh;
+    }
+
+    .swiper-custom{
+        width: 100%;
     }
 
     .nav-link{
         margin-left: auto;
         margin-right: auto;
         background-color: var(--green);
+    }
+    
+    #navBlue{
+        background-color: var(--c-black);
+        z-index: 10;
     }
 
     .moon{

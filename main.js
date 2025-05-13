@@ -149,7 +149,7 @@ let stars = document.querySelectorAll('.star');
    
 stars.forEach((star, index)=>{
     
-    for(let i = 1; i < reviews[index].rank ; i++){
+    for(let i = 1; i <= reviews[index].rank ; i++){
         let stella = document.createElement('i');
         stella.classList.add('bi', 'bi-star-fill');
         star.appendChild(stella);
@@ -157,7 +157,7 @@ stars.forEach((star, index)=>{
 
     let difference = 5 - reviews[index].rank;
 
-    for(let i = 1; i < difference ; i++){
+    for(let i = 1; i <= difference ; i++){
         let stella = document.createElement('i');
         stella.classList.add('bi', 'bi-star');
         star.appendChild(stella);
